@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    :root{
+    --background-color: #FFF;
+    --text-color: #1A1A1A;
+    --button-background-color: #9B8AFB;
+    }
+    *{
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: .5s ease;
+    }
+    .container{
+        
+     
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    input{
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        outline: none;
+        
+    }
+    .inputs{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+    } 
+    #result{
+        margin-top: 10px;
+        width: 100%;
+     
+        display: flex;
+        align-items: center;
+        text-align: start;
+        justify-content: center;
+        flex-direction: column;
+        transition: .5s ease;
+        
+    }
+
+    .btn{
+        width: 150px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        background-color: var(--button-background-color);
+        color: white;
+        transition: 3s ease;
+
+    }
+    .title{
+        width: 450px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    
+    #checkbox{
+        display: none;
+    }
+    input[type="checkbox"]{
+        -webkit-appearance: none;
+         visibility: hidden;
+         display: none;
+}
+
+
+.check{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 30px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+    border: 1px solid gray;
+}
+
+
+
+input[type="checkbox"]:checked ~ .check{
+    background:	#23272a;
+
+}
+
+
+.check::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: #33332c;
+    z-index: 9999;
+    
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .check::before{
+    transform: translate(18px);
+    background-color: #ffffff;
+
+}
+
+
+
+    
+</style>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Digite os valores A,B e C, para descobrir o resultado da atividade.</h1>
+                  
+        <label class="dark-mode">
+          
+            <input type="checkbox" class="check1">
+            <span class="check"></span>
+        
+           </label>
+           
+        </div>
+
+        <div class="inputs">
+            <input type="number" placeholder="Numero A" id="a">
+            <input type="number" placeholder="Numero B" id="b">
+            <input type="number" placeholder="Numero C" id="c">
+            <button id="calcular" class="btn">Calcular...</button>
+            <button id="clean" style="margin: 10px;" class="btn">Limpar</button>
+
+        </div>
+        <!-- <input id="number1" name="number1" type="number" placeholder="Adultos"> -->
+        
+        <!-- <input type="text" placeholder="Qual a soma?" id="s"> -->
+        <!-- <input id="number2" name="number2" type="number" placeholder="Crianças"> -->
+        
+
+        <div id="result">
+
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>  
